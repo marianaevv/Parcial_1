@@ -10,8 +10,6 @@
 
 let nombres  = ['Jorge','Isabel','Juan','Pedro','Karina','Jose','Arturo','Rogelio','Bertha'];
 
-
-
 /*
 
 Crea una funcion llamada: challenge1  que realice lo siguiente: 
@@ -27,14 +25,32 @@ Crea una funcion llamada: challenge1  que realice lo siguiente:
 */
 
 // CREA TU FUNCION challenge1 aqui:
-
-
-
+function challenge1(){
+    var botones = prompt("Hola! ¿Cuántos botones necesitas?");
+let dummyVar = document.getElementById("dummy");
+for(let i=0;i<botones;i++){
+        console.log(nombres[i]);
+        var newBtn = document.createElement("button");
+        newBtn.textContent = nombres[i];
+        dummyVar.appendChild(newBtn);
+    }
+}
 /*
 Crea una funcion llamada: challenge2 que utilizando un FOR convierta todos los nombres a mayusula y los escriba en la consola
 */
 
 // CREA TU FUNCION challenge2 2 aquí.
+function challenge2(){ 
+    let cadena;
+    let arraySize = nombres.length;
+    for(let i=0;i<arraySize;i++){
+        cadena = nombres[i];   
+        cadena = cadena.toUpperCase();
+        console.log(cadena);
+    }
+}
+
+
 
 
 
@@ -69,6 +85,21 @@ Deberia escribir en consola
 
 // CREA TU FUNCION printInfo() AQUI
 
+function Dog(nombre,color,raza){
+    this.nombre = nombre;
+    this.color = color;
+    this.raza = raza;
+}
+
+var Snoopy = new Dog('Snoopy', 'Cafe', 'Poodle');
+var Scoby = new Dog('Scoby', 'Blanco', 'Pomeranian');
+var Scrapy = new Dog('Scrapy', 'Negro', 'Yorkshire');
+
+function challenge3(){
+    console.log('Nombre: ' + Snoopy.nombre + 'Color: ' + Snoopy.color + 'Raza: ' + Snoopy.raza);
+    console.log('Nombre: ' + Scoby.nombre + 'Color: ' + Scoby.color + 'Raza: ' + Scoby.raza);
+    console.log('Nombre: ' + Scrapy.nombre + 'Color: ' + Scrapy.color + 'Raza: ' + Scrapy.raza);
+}
 
 
 
@@ -78,9 +109,9 @@ Deberia escribir en consola
 
 <body>
 
-    <button onclick="challenge1()">Challenge 1</button>
-    <button onclick="challenge2()">Challenge 2</button>
-    <button onclick="challenge3()">Challenge 2</button>
+    <button onclick="challenge1()" id="btn1">Challenge 1</button>
+    <button onclick="challenge2()" id="btn2">Challenge 2</button>
+    <button onclick="challenge3()" id="btn3">Challenge 2</button>
 
   
 <div id = "dummy">
